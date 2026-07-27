@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "#accueil", label: "Accueil" },
-  { href: "#apropos", label: "À propos" },
-  { href: "#competences", label: "Compétences" },
-  { href: "#projets", label: "Projets" },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
   { href: "#cv", label: "CV" },
   { href: "#contact", label: "Contact" },
 ];
@@ -56,19 +56,19 @@ export const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a
-          href="#accueil"
+          href="#home"
           onClick={(e) => {
             e.preventDefault();
-            handleNavClick("#accueil");
+            handleNavClick("#home");
           }}
           className="text-xl md:text-2xl font-bold gradient-text"
-          aria-label="Mohamed Khalil Chouchen - Retour à l'accueil"
+          aria-label="Mohamed Khalil Chouchen - Back to home"
         >
           MKC
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1" role="navigation" aria-label="Navigation principale">
+        <nav className="hidden md:flex items-center gap-1" role="navigation" aria-label="Main navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -96,7 +96,7 @@ export const Header = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
@@ -109,7 +109,7 @@ export const Header = () => {
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         role="navigation"
-        aria-label="Navigation mobile"
+        aria-label="Mobile navigation"
       >
         <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
           {navLinks.map((link) => (

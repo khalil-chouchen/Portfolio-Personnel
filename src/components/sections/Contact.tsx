@@ -9,20 +9,20 @@ import { useToast } from "@/hooks/use-toast";
 const contactInfo = [
   {
     icon: Mail,
-    label: "E-mail",
+    label: "Email",
     value: "khalilchouchen112@gmail.com",
     href: "mailto:khalilchouchen112@gmail.com",
   },
   {
     icon: Phone,
-    label: "Téléphone",
+    label: "Phone",
     value: "+216 56 747 765",
     href: "tel:+21656747765",
   },
   {
     icon: MapPin,
-    label: "Adresse",
-    value: "Bhayer, Hammam Sousse, Sousse, Tunisie",
+    label: "Location",
+    value: "Sousse, Tunisia",
     href: null,
   },
 ];
@@ -47,7 +47,7 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulation d'envoi (à remplacer par votre logique d'envoi réelle)
+    // TODO: wire this up to a real send path (Formspree, EmailJS, or a backend endpoint)
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
@@ -55,8 +55,8 @@ export const Contact = () => {
     setFormData({ name: "", email: "", message: "" });
 
     toast({
-      title: "Message envoyé !",
-      description: "Merci pour votre message. Je vous répondrai rapidement.",
+      title: "Message sent!",
+      description: "Thanks for reaching out — I'll get back to you soon.",
     });
 
     // Reset success state after 5 seconds
@@ -73,10 +73,10 @@ export const Contact = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 id="contact-title" className="section-title">
-            Me <span className="gradient-text">Contacter</span>
+            Let's <span className="gradient-text">talk</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            Une question, un projet ? N'hésitez pas à me contacter
+            Open to remote roles — full-stack, mobile, or AI-leaning. I usually reply within 24–48 hours.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-foreground mb-6">
-              Informations de contact
+              Contact info
             </h3>
             <div className="space-y-4">
               {contactInfo.map((info) => (
@@ -112,12 +112,11 @@ export const Contact = () => {
               ))}
             </div>
 
-            {/* Social links placeholder */}
+            {/* Social links */}
             <div className="pt-6">
               <div className="flex gap-3">
-                {/* TODO: Ajoutez vos liens vers les réseaux sociaux */}
                 <a
-                  href="https://github.com/khalilchouchen112"
+                  href="https://github.com/khalil-chouchen"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
@@ -128,7 +127,7 @@ export const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://tn.linkedin.com/khalil-chouchen"
+                  href="https://www.linkedin.com/in/khalil-chouchen/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
@@ -145,11 +144,11 @@ export const Contact = () => {
           {/* Contact Form */}
           <div className="p-8 rounded-2xl bg-card border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">
-              Envoyez-moi un message
+              Send me a message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="name">Nom complet</Label>
+                <Label htmlFor="name">Full name</Label>
                 <Input
                   id="name"
                   name="name"
@@ -157,13 +156,13 @@ export const Contact = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Votre nom"
+                  placeholder="Your name"
                   className="bg-secondary/50 border-border"
                   aria-required="true"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Adresse e-mail</Label>
+                <Label htmlFor="email">Email address</Label>
                 <Input
                   id="email"
                   name="email"
@@ -171,7 +170,7 @@ export const Contact = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="votre.email@exemple.com"
+                  placeholder="you@example.com"
                   className="bg-secondary/50 border-border"
                   aria-required="true"
                 />
@@ -185,7 +184,7 @@ export const Contact = () => {
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Votre message..."
+                  placeholder="Your message..."
                   className="bg-secondary/50 border-border resize-none"
                   aria-required="true"
                 />
@@ -199,17 +198,17 @@ export const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Envoi en cours...
+                    Sending...
                   </>
                 ) : isSubmitted ? (
                   <>
                     <CheckCircle className="mr-2 h-5 w-5" />
-                    Message envoyé !
+                    Message sent!
                   </>
                 ) : (
                   <>
                     <Send className="mr-2 h-5 w-5" />
-                    Envoyer le message
+                    Send message
                   </>
                 )}
               </Button>

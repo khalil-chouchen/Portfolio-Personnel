@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Play, ChevronDown } from "lucide-react";
+import { Download, Play, ChevronDown, Trophy } from "lucide-react";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
@@ -7,7 +7,7 @@ export const Hero = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const scrollToAbout = () => {
-    const element = document.getElementById("apropos");
+    const element = document.getElementById("about");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -15,7 +15,7 @@ export const Hero = () => {
 
   return (
     <section
-      id="accueil"
+      id="home"
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4"
       style={{ background: "var(--gradient-hero)" }}
       aria-labelledby="hero-title"
@@ -39,13 +39,22 @@ export const Hero = () => {
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 opacity-0 animate-fade-in animation-delay-200">
-          Étudiant en 3<sup>ᵉ</sup> année Internet of Things (IoT) à Sousse
+          Full-Stack Developer — Web, Mobile, AI
         </p>
+
+        {/* Award callout */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6 opacity-0 animate-fade-in animation-delay-200">
+          <Trophy className="h-4 w-4 text-primary" aria-hidden="true" />
+          <span className="text-sm font-medium text-foreground">
+            1st place, Arab AI & IoT Challenge — GITEX Global Dubai
+          </span>
+        </div>
 
         {/* Description */}
         <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-in animation-delay-300">
-          Passionné par le développement web, l'IoT et l'intelligence artificielle.
-          Je crée des expériences numériques innovantes en alliant design moderne et technologies de pointe.
+          3 years building production web, mobile, and AI-driven apps across React, Next.js,
+          and React Native. I own projects end to end — UI/UX through deployment. Based in
+          Sousse, Tunisia. Open to remote roles.
         </p>
 
         {/* CTA Buttons */}
@@ -54,10 +63,9 @@ export const Hero = () => {
             variant="hero"
             asChild
           >
-            {/* TODO: Remplacez le href par le chemin vers votre CV PDF */}
-            <a href="/cv.pdf" download aria-label="Télécharger mon CV au format PDF">
+            <a href="/cv.pdf" download aria-label="Download my CV as PDF">
               <Download className="mr-2 h-5 w-5" />
-              Télécharger mon CV
+              Download CV
             </a>
           </Button>
           <Button
@@ -66,7 +74,7 @@ export const Hero = () => {
             aria-haspopup="dialog"
           >
             <Play className="mr-2 h-5 w-5" />
-            Voir mon CV vidéo
+            Watch 1-min video intro
           </Button>
         </div>
       </div>
@@ -75,7 +83,7 @@ export const Hero = () => {
       <button
         onClick={scrollToAbout}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-float cursor-pointer"
-        aria-label="Défiler vers la section À propos"
+        aria-label="Scroll to About section"
       >
         <ChevronDown className="h-8 w-8" />
       </button>
@@ -84,15 +92,15 @@ export const Hero = () => {
       <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
         <DialogContent className="sm:max-w-3xl bg-card border-border">
           <DialogHeader>
-            <DialogTitle className="text-foreground">Mon CV vidéo</DialogTitle>
+            <DialogTitle className="text-foreground">Video intro</DialogTitle>
             <DialogDescription className="text-muted-foreground">
-              Découvrez mon parcours et mes motivations en vidéo.
+              A one-minute walkthrough of my background and what I'm looking for.
             </DialogDescription>
           </DialogHeader>
           <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
             <video controls className="w-full h-full rounded-lg">
               <source src="/cvvd.mp4" type="video/mp4" />
-              Votre navigateur ne supporte pas la lecture vidéo.
+              Your browser doesn't support video playback.
             </video>
           </div>
         </DialogContent>

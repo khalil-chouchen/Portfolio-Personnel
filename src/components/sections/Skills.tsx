@@ -1,75 +1,49 @@
-import { 
-  Palette, 
-  Brain, 
-  Code, 
-  Database, 
-  GitBranch, 
-  Lightbulb,
-  Users,
-  Target,
-  Sparkles
+import {
+  Code,
+  Smartphone,
+  Database,
+  Brain,
+  Cpu,
+  Wrench,
 } from "lucide-react";
 
 const technicalSkills = [
   {
-    category: "Design et UI/UX",
-    icon: Palette,
-    skills: ["Adobe Photoshop", "Adobe Illustrator", "Adobe XD", "Figma", "Prototypage", "Maquettes"],
-  },
-  {
-    category: "Intelligence Artificielle",
-    icon: Brain,
-    skills: ["Python", "Concepts d'IA", "Machine Learning", "Scripting"],
-  },
-  {
-    category: "Développement Frontend",
+    category: "Languages",
     icon: Code,
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "Angular", "TypeScript"],
+    skills: ["JavaScript", "TypeScript", "Python", "C/C++", "SQL"],
   },
   {
-    category: "Backend & Bases de données",
+    category: "Web & Mobile",
+    icon: Smartphone,
+    skills: ["React", "Next.js", "React Native", "Node.js"],
+  },
+  {
+    category: "Data & Cloud",
     icon: Database,
-    skills: ["PHP", "MongoDB", "APIs REST", "Gestion de données", "Node.js"],
+    skills: ["MongoDB", "Firebase", "REST APIs"],
   },
   {
-    category: "Outils & Bonnes pratiques",
-    icon: GitBranch,
-    skills: ["Git", "GitHub", "Débogage", "Tests", "Agile", "Scrum"],
+    category: "AI / ML",
+    icon: Brain,
+    skills: ["LLM Integration", "Computer Vision", "Model Training", "OCR"],
   },
   {
-    category: "Programmation",
-    icon: Lightbulb,
-    skills: ["C++", "Python", "Java", "Problem Solving", "Algorithmes"],
-  },
-];
-
-const softSkills = [
-  {
-    category: "Relations & Personnel",
-    icon: Users,
-    skills: ["Motivé", "Autonome", "Rigoureux", "Responsable"],
+    category: "IoT & Hardware",
+    icon: Cpu,
+    skills: ["ESP32", "Arduino", "Microcontrollers", "Sensor Systems"],
   },
   {
-    category: "Organisation",
-    icon: Target,
-    skills: ["Gestion du temps", "Apprentissage rapide", "Curiosité", "Sens de l'organisation"],
-  },
-  {
-    category: "Communication",
-    icon: Users,
-    skills: ["Esprit d'équipe", "Écoute active", "Adaptabilité", "Communication claire"],
-  },
-  {
-    category: "Créativité",
-    icon: Sparkles,
-    skills: ["Esprit critique", "Créativité", "Persévérance", "Professionnalisme"],
+    category: "Tools & Design",
+    icon: Wrench,
+    skills: ["Git", "Linux", "UI/UX Design", "Figma", "Automation"],
   },
 ];
 
 export const Skills = () => {
   return (
     <section
-      id="competences"
+      id="skills"
       className="section"
       aria-labelledby="skills-title"
     >
@@ -77,15 +51,15 @@ export const Skills = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 id="skills-title" className="section-title">
-            Compétences <span className="gradient-text">techniques</span>
+            Technical <span className="gradient-text">skills</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            Un aperçu de mes compétences en développement, design et technologies
+            The stack I build with day to day
           </p>
         </div>
 
         {/* Technical Skills */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {technicalSkills.map((group, index) => (
             <article
               key={group.category}
@@ -107,34 +81,6 @@ export const Skills = () => {
               </div>
             </article>
           ))}
-        </div>
-
-        {/* Soft Skills */}
-        <div className="mt-20">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
-            Soft <span className="gradient-text">Skills</span>
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {softSkills.map((group, index) => (
-              <article
-                key={group.category}
-                className="p-6 rounded-2xl bg-secondary/50 border border-border/50 text-center card-hover"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="inline-flex p-3 rounded-xl bg-primary/10 mb-4">
-                  <group.icon className="h-6 w-6 text-primary" aria-hidden="true" />
-                </div>
-                <h4 className="text-base font-semibold text-foreground mb-3">{group.category}</h4>
-                <ul className="space-y-2">
-                  {group.skills.map((skill) => (
-                    <li key={skill} className="text-muted-foreground text-sm">
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
         </div>
       </div>
     </section>

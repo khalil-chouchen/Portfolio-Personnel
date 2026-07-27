@@ -1,23 +1,21 @@
-import { MapPin, Mail, Phone, Calendar, Globe } from "lucide-react";
+import { MapPin, Mail, Phone, Globe } from "lucide-react";
 
 const personalInfo = [
-  { icon: Calendar, label: "Âge", value: "20 ans (18/09/2004)" },
-  { icon: MapPin, label: "Ville", value: "Sousse, Tunisie" },
-  { icon: Mail, label: "E-mail", value: "khalilchouchen112@gmail.com", href: "mailto:khalilchouchen112@gmail.com" },
-  { icon: Phone, label: "Téléphone", value: "+216 56 747 765", href: "tel:+21656747765" },
+  { icon: MapPin, label: "Location", value: "Sousse, Tunisia" },
+  { icon: Mail, label: "Email", value: "khalilchouchen112@gmail.com", href: "mailto:khalilchouchen112@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+216 56 747 765", href: "tel:+21656747765" },
 ];
 
 const languages = [
-  { name: "Arabe", level: "Langue maternelle" },
-  { name: "Français", level: "Indépendant" },
-  { name: "Anglais", level: "Indépendant" },
-  { name: "Allemand", level: "Élémentaire" },
+  { name: "Arabic", level: "Native" },
+  { name: "English", level: "Fluent" },
+  { name: "French", level: "Fluent" },
 ];
 
 export const About = () => {
   return (
     <section
-      id="apropos"
+      id="about"
       className="section bg-card/50"
       aria-labelledby="about-title"
     >
@@ -25,10 +23,10 @@ export const About = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 id="about-title" className="section-title">
-            À propos de <span className="gradient-text">moi</span>
+            About <span className="gradient-text">me</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            Découvrez mon parcours et mes aspirations
+            Where I've worked and what I build
           </p>
         </div>
 
@@ -36,22 +34,13 @@ export const About = () => {
           {/* Profile image */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-none">
             <div className="relative">
-              {/* Profile image */}
-            <div className="flex justify-center lg:justify-end order-1 lg:order-none">
-              <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-border overflow-hidden">
-                  <img
-                    src="/pdp.jpeg"
-                    alt="Photo de Mohamed Khalil Chouchen"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/30 rounded-2xl" />
-                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/10 rounded-2xl" />
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-border overflow-hidden">
+                <img
+                  src="/pdp.jpeg"
+                  alt="Photo of Mohamed Khalil Chouchen"
+                  className="w-full h-full object-cover"
+                />
               </div>
-            </div>
 
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/30 rounded-2xl" />
@@ -63,20 +52,33 @@ export const About = () => {
           <div className="space-y-6">
             <div className="space-y-4 text-muted-foreground">
               <p className="text-lg">
-                Je suis <strong className="text-foreground">Mohamed Khalil Chouchen</strong>, 
-                étudiant en 3<sup>ᵉ</sup> année spécialisé en Internet of Things (IoT) à Sousse, Tunisie.
+                I'm <strong className="text-foreground">Mohamed Khalil Chouchen</strong>, a
+                full-stack developer based in Sousse, Tunisia, with 3 years of experience
+                building web, mobile, and AI-driven products. Freelance since 2023.
               </p>
               <p>
-                Passionné par les nouvelles technologies, je m'intéresse particulièrement au 
-                <strong className="text-foreground"> développement web</strong> (front-end et back-end), 
-                à l'<strong className="text-foreground">intelligence artificielle</strong> et à 
-                l'<strong className="text-foreground">UX/UI design</strong>. J'aime créer des solutions 
-                innovantes qui allient esthétique et fonctionnalité.
+                I've been an <strong className="text-foreground">IT & full-stack developer at 3M Consulting</strong>{" "}
+                since June 2025, where I built the company's official website end to end and
+                two internal automation tools. In parallel, I just wrapped up an{" "}
+                <strong className="text-foreground">IoT & mobile internship at InnoVibe</strong>,
+                where I built AgriNova, an intelligent agriculture system with a React Native
+                app and real-time crop-disease detection. I've also taught computer science
+                at a private school in Monastir and interned as a frontend developer at
+                TYM Solutions.
               </p>
               <p>
-                Actuellement basé à <strong className="text-foreground">Bhayer, Hammam Sousse</strong>, 
-                je suis à la recherche de projets concrets : stages, missions freelance ou 
-                collaborations pour mettre en pratique mes compétences et continuer à apprendre.
+                Most of my work is <strong className="text-foreground">React and Next.js</strong>{" "}
+                on the frontend, Node.js with MongoDB or Firebase on the backend, and{" "}
+                <strong className="text-foreground">React Native</strong> when it needs to
+                run on a phone. On the hardware side I build on ESP32 and Arduino, and a good
+                chunk of my recent work involves wiring LLMs into products or using computer
+                vision and OCR to pull structured data out of images.
+              </p>
+              <p>
+                I hold an engineering degree in{" "}
+                <strong className="text-foreground">Computer Engineering & IoT</strong> from
+                ISITCOM (2023–2026), and I'm open to remote roles where I can own features
+                end to end.
               </p>
             </div>
 
@@ -111,7 +113,7 @@ export const About = () => {
             <div className="pt-4">
               <div className="flex items-center gap-2 mb-4">
                 <Globe className="h-5 w-5 text-primary" aria-hidden="true" />
-                <h3 className="text-lg font-semibold text-foreground">Langues</h3>
+                <h3 className="text-lg font-semibold text-foreground">Languages</h3>
               </div>
               <div className="flex flex-wrap gap-3">
                 {languages.map((lang) => (
