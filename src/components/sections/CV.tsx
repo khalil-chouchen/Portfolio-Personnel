@@ -25,7 +25,7 @@ export const CV = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 id="cv-title" className="section-title">
-            <span className="gradient-text">CV</span>
+            <span className="accent">CV</span>
           </h2>
           <p className="section-subtitle mx-auto">
             The full picture, in one PDF
@@ -34,9 +34,9 @@ export const CV = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {/* CV Download Card */}
-          <div className="p-8 rounded-2xl bg-card border border-border flex flex-col justify-center">
+          <div className="p-8 rounded-md bg-card border border-border flex flex-col justify-center">
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-4 rounded-xl bg-primary/10">
+              <div className="p-4 rounded-md bg-primary/10">
                 <Download className="h-8 w-8 text-primary" aria-hidden="true" />
               </div>
               <div>

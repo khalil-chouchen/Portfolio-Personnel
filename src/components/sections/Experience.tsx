@@ -57,7 +57,7 @@ export const Experience = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 id="experience-title" className="section-title">
-            <span className="gradient-text">Experience</span>
+            <span className="accent">Experience</span>
           </h2>
           <p className="section-subtitle mx-auto">
             Where I've worked over the past three years
@@ -68,7 +68,7 @@ export const Experience = () => {
           {experience.map((item) => (
             <article
               key={`${item.role}-${item.org}`}
-              className="p-6 rounded-xl bg-card border border-border"
+              className="p-6 rounded-md bg-card border border-border"
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-3">
                 <h3 className="font-semibold text-foreground">

@@ -73,7 +73,7 @@ export const Contact = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 id="contact-title" className="section-title">
-            Let's <span className="gradient-text">talk</span>
+            Let's <span className="accent">talk</span>
           </h2>
           <p className="section-subtitle mx-auto">
             Open to remote roles — full-stack, mobile, or AI-leaning. I usually reply within 24–48 hours.
@@ -90,9 +90,9 @@ export const Contact = () => {
               {contactInfo.map((info) => (
                 <div
                   key={info.label}
-                  className="flex items-center gap-4 p-5 rounded-xl bg-card border border-border card-hover"
+                  className="flex items-center gap-4 p-5 rounded-md bg-card border border-border card-hover"
                 >
-                  <div className="p-3 rounded-xl bg-primary/10">
+                  <div className="p-3 rounded-md bg-primary/10">
                     <info.icon className="h-6 w-6 text-primary" aria-hidden="true" />
                   </div>
                   <div>
@@ -119,7 +119,7 @@ export const Contact = () => {
                   href="https://github.com/khalil-chouchen"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
+                  className="p-3 rounded-md bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
                   aria-label="GitHub"
                 >
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -130,7 +130,7 @@ export const Contact = () => {
                   href="https://www.linkedin.com/in/khalil-chouchen/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
+                  className="p-3 rounded-md bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
                   aria-label="LinkedIn"
                 >
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -142,7 +142,7 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="p-8 rounded-2xl bg-card border border-border">
+          <div className="p-8 rounded-md bg-card border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">
               Send me a message
             </h3>

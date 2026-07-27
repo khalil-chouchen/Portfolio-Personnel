@@ -23,7 +23,7 @@ export const About = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 id="about-title" className="section-title">
-            About <span className="gradient-text">me</span>
+            About <span className="accent">me</span>
           </h2>
           <p className="section-subtitle mx-auto">
             Where I've worked and what I build
@@ -33,18 +33,16 @@ export const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Profile image */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-none">
-            <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-border overflow-hidden">
+            <div className="relative w-64 md:w-80">
+              <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-primary" />
+              <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-primary" />
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-md border border-border overflow-hidden">
                 <img
                   src="/pdp.jpeg"
                   alt="Photo of Mohamed Khalil Chouchen"
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/30 rounded-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/10 rounded-2xl" />
             </div>
           </div>
 
@@ -87,7 +85,7 @@ export const About = () => {
               {personalInfo.map((info) => (
                 <div
                   key={info.label}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-secondary/50 border border-border/50"
+                  className="flex items-center gap-3 p-4 rounded-md bg-secondary/50 border border-border/50"
                 >
                   <div className="p-2 rounded-lg bg-primary/10">
                     <info.icon className="h-5 w-5 text-primary" aria-hidden="true" />
@@ -119,7 +117,7 @@ export const About = () => {
                 {languages.map((lang) => (
                   <div
                     key={lang.name}
-                    className="px-4 py-2 rounded-full bg-secondary/50 border border-border/50"
+                    className="px-4 py-2 rounded-md bg-secondary/50 border border-border/50"
                   >
                     <span className="text-foreground font-medium">{lang.name}</span>
                     <span className="text-muted-foreground text-sm"> – {lang.level}</span>

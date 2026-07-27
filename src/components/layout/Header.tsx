@@ -61,7 +61,7 @@ export const Header = () => {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="text-xl md:text-2xl font-bold gradient-text"
+          className="font-mono text-lg md:text-xl font-medium text-primary"
           aria-label="Mohamed Khalil Chouchen - Back to home"
         >
           MKC

@@ -1,41 +1,26 @@
-import {
-  Code,
-  Smartphone,
-  Database,
-  Brain,
-  Cpu,
-  Wrench,
-} from "lucide-react";
-
 const technicalSkills = [
   {
     category: "Languages",
-    icon: Code,
     skills: ["JavaScript", "TypeScript", "Python", "C/C++", "SQL"],
   },
   {
     category: "Web & Mobile",
-    icon: Smartphone,
     skills: ["React", "Next.js", "React Native", "Node.js"],
   },
   {
     category: "Data & Cloud",
-    icon: Database,
     skills: ["MongoDB", "Firebase", "REST APIs"],
   },
   {
     category: "AI / ML",
-    icon: Brain,
     skills: ["LLM Integration", "Computer Vision", "Model Training", "OCR"],
   },
   {
     category: "IoT & Hardware",
-    icon: Cpu,
     skills: ["ESP32", "Arduino", "Microcontrollers", "Sensor Systems"],
   },
   {
     category: "Tools & Design",
-    icon: Wrench,
     skills: ["Git", "Linux", "UI/UX Design", "Figma", "Automation"],
   },
 ];
@@ -51,27 +36,23 @@ export const Skills = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 id="skills-title" className="section-title">
-            Technical <span className="gradient-text">skills</span>
+            Technical <span className="accent">skills</span>
           </h2>
           <p className="section-subtitle mx-auto">
             The stack I build with day to day
           </p>
         </div>
 
-        {/* Technical Skills */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {technicalSkills.map((group, index) => (
-            <article
+        {/* Technical Skills — grouped rows, not a repeated card grid */}
+        <div className="max-w-4xl mx-auto border border-border rounded-md divide-y divide-border">
+          {technicalSkills.map((group) => (
+            <div
               key={group.category}
-              className="p-6 rounded-2xl bg-card border border-border card-hover"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 p-5"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 rounded-xl bg-primary/10">
-                  <group.icon className="h-6 w-6 text-primary" aria-hidden="true" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">{group.category}</h3>
-              </div>
+              <h3 className="font-mono text-sm text-muted-foreground w-40 flex-shrink-0">
+                {group.category}
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span key={skill} className="skill-tag">
@@ -79,7 +60,7 @@ export const Skills = () => {
                   </span>
                 ))}
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>

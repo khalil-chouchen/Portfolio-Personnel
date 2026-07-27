@@ -30,7 +30,7 @@ export const Leadership = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 id="leadership-title" className="section-title">
-            Leadership & <span className="gradient-text">community</span>
+            Leadership & <span className="accent">community</span>
           </h2>
           <p className="section-subtitle mx-auto">
             Three years at ISITCOM's student tech clubs
@@ -41,10 +41,10 @@ export const Leadership = () => {
           {roles.map((role) => (
             <article
               key={role.title}
-              className="p-6 rounded-xl bg-card border border-border"
+              className="p-6 rounded-md bg-card border border-border"
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-primary/10 flex-shrink-0">
+                <div className="p-3 rounded-md bg-primary/10 flex-shrink-0">
                   <Users className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
                 <div className="flex-1">

@@ -1,56 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 220 20% 6%;
-    --foreground: 210 40% 98%;
+    /* Graphite, tinted warm toward the accent hue */
+    --background: 16% 0.014 55;
+    --foreground: 95.5% 0.006 60;
 
-    --card: 220 18% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 20.5% 0.016 55;
+    --card-foreground: 95.5% 0.006 60;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20.5% 0.016 55;
+    --popover-foreground: 95.5% 0.006 60;
 
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 20% 6%;
+    /* Amber-phosphor accent — the one committed color */
+    --primary: 74% 0.19 55;
+    --primary-foreground: 16% 0.014 55;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 24% 0.018 55;
+    --secondary-foreground: 95.5% 0.006 60;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 24% 0.018 55;
+    --muted-foreground: 72% 0.02 55;
 
-    --accent: 175 80% 50%;
-    --accent-foreground: 220 20% 6%;
+    --accent: 74% 0.19 55;
+    --accent-foreground: 16% 0.014 55;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 58% 0.19 25;
+    --destructive-foreground: 95.5% 0.006 60;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 175 80% 50%;
+    --border: 30% 0.02 55;
+    --input: 30% 0.02 55;
+    --ring: 74% 0.19 55;
 
-    --radius: 0.75rem;
+    --radius: 0.375rem;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(190 80% 40%));
-    --gradient-card: linear-gradient(145deg, hsl(220 18% 12%), hsl(220 18% 8%));
-    --gradient-hero: radial-gradient(ellipse at top, hsl(220 18% 12%) 0%, hsl(220 20% 6%) 70%);
-    --shadow-glow: 0 0 40px hsl(175 80% 50% / 0.2);
-    --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-card: 0 10px 40px -10px oklch(0% 0 0 / 0.5);
 
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 175 80% 50%;
-    --sidebar-primary-foreground: 220 20% 6%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 15% 20%;
-    --sidebar-ring: 175 80% 50%;
+    --sidebar-background: 20.5% 0.016 55;
+    --sidebar-foreground: 95.5% 0.006 60;
+    --sidebar-primary: 74% 0.19 55;
+    --sidebar-primary-foreground: 16% 0.014 55;
+    --sidebar-accent: 24% 0.018 55;
+    --sidebar-accent-foreground: 95.5% 0.006 60;
+    --sidebar-border: 30% 0.02 55;
+    --sidebar-ring: 74% 0.19 55;
   }
 }
 
@@ -65,86 +60,97 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Manrope', sans-serif;
   }
 
-  /* Focus visible for accessibility */
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
   :focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 
-  /* Selection color */
   ::selection {
     @apply bg-primary/30 text-foreground;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
 @layer components {
-  /* Section styling */
   .section {
     @apply py-20 md:py-28 px-4;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight leading-[1.05];
   }
 
   .section-subtitle {
-    @apply text-muted-foreground text-lg md:text-xl max-w-2xl;
+    @apply text-muted-foreground text-lg md:text-xl max-w-2xl leading-relaxed;
   }
 
-  /* Card hover effect */
   .card-hover {
-    @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[var(--shadow-glow)];
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-primary/40;
   }
 
-  /* Gradient text */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400;
+  /* Solid-color emphasis — deliberately not a gradient clip */
+  .accent {
+    @apply text-primary;
   }
 
-  /* Glass effect */
   .glass {
     @apply bg-card/80 backdrop-blur-md border border-border/50;
   }
 
-  /* Skill tag */
   .skill-tag {
-    @apply px-3 py-1.5 rounded-full text-sm font-medium bg-secondary text-foreground border border-border/50 transition-colors hover:bg-primary hover:text-primary-foreground;
+    @apply px-3 py-1.5 text-sm font-mono text-foreground border border-border transition-colors hover:border-primary hover:text-primary;
   }
 
-  /* Animated underline */
+  .mono-label {
+    @apply font-mono text-xs uppercase tracking-wide text-muted-foreground;
+  }
+
   .animated-underline {
     @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  /* Instrument-panel backdrop: fine grid + vignette, no blurred blobs */
+  .grid-backdrop {
+    background-image:
+      linear-gradient(oklch(var(--foreground) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(var(--foreground) / 0.05) 1px, transparent 1px),
+      radial-gradient(ellipse at top, oklch(var(--card)) 0%, oklch(var(--background)) 70%);
+    background-size: 48px 48px, 48px 48px, 100% 100%;
   }
 }
 
 @layer utilities {
-  /* Animation delays */
-  .animation-delay-100 {
-    animation-delay: 100ms;
-  }
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  .animation-delay-300 {
-    animation-delay: 300ms;
-  }
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-  .animation-delay-500 {
-    animation-delay: 500ms;
-  }
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
 
-  /* Custom scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     width: 8px;
   }
   .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-muted rounded-full;
+    @apply bg-muted;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-border rounded-full hover:bg-muted-foreground/50;
+    @apply bg-border hover:bg-muted-foreground/50;
   }
 }

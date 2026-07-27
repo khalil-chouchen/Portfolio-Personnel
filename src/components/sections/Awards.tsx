@@ -1,66 +1,48 @@
-import { Trophy, Medal, Flag } from "lucide-react";
+import { Trophy } from "lucide-react";
 
-const awards = [
-  {
-    icon: Trophy,
-    title: "1st place — Arab AI & IoT Challenge",
-    detail: "GITEX Global Dubai, 600+ participants",
-  },
-  {
-    icon: Trophy,
-    title: "1st place — B-Tech",
-    detail: null,
-  },
-  {
-    icon: Medal,
-    title: "Winner — Nuit de l'Info",
-    detail: null,
-  },
-  {
-    icon: Medal,
-    title: "Winner — IEEE hackathon",
-    detail: null,
-  },
-  {
-    icon: Flag,
-    title: "CTF competitor",
-    detail: null,
-  },
+const otherAwards = [
+  "1st place — B-Tech Competition",
+  "Winner — Nuit de l'Info",
+  "Winner — IEEE hackathon",
+  "Cybersecurity CTF competitor",
 ];
 
 export const Awards = () => {
   return (
     <section
-      className="section"
+      className="section bg-card/50"
       aria-labelledby="awards-title"
     >
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 id="awards-title" className="section-title">
-            Awards & <span className="gradient-text">recognition</span>
+            Awards & <span className="accent">recognition</span>
           </h2>
           <p className="section-subtitle mx-auto">
             Competitions I've placed in or won
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {awards.map((award) => (
-            <article
-              key={award.title}
-              className="flex items-start gap-4 p-5 rounded-2xl bg-card border border-border card-hover"
-            >
-              <div className="p-3 rounded-xl bg-primary/10 flex-shrink-0">
-                <award.icon className="h-5 w-5 text-primary" aria-hidden="true" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground">{award.title}</h3>
-                {award.detail && (
-                  <p className="text-sm text-muted-foreground mt-1">{award.detail}</p>
-                )}
-              </div>
-            </article>
-          ))}
+        <div className="max-w-3xl mx-auto space-y-4">
+          {/* Featured: GITEX win */}
+          <article className="p-6 md:p-8 rounded-md bg-primary/10 border border-primary/40 flex items-start gap-5">
+            <Trophy className="h-8 w-8 text-primary flex-shrink-0" aria-hidden="true" />
+            <div>
+              <p className="font-mono text-xs text-primary mb-1">GITEX GLOBAL DUBAI · 600+ PARTICIPANTS</p>
+              <h3 className="text-xl font-bold text-foreground">
+                1st place — Arab AI & IoT Challenge
+              </h3>
+            </div>
+          </article>
+
+          {/* Everything else, as a plain list */}
+          <div className="border border-border rounded-md divide-y divide-border">
+            {otherAwards.map((award) => (
+              <p key={award} className="px-6 py-4 text-muted-foreground text-sm">
+                {award}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>
