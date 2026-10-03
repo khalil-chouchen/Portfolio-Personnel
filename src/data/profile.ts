@@ -42,14 +42,14 @@ export const profile = {
     stack: ["React Native", "IoT telemetry", "Computer vision", "Remote control"],
   },
   projects: [
-    { title: "Company official website", description: "Designed and built end to end, from UI/UX through deployment.", tags: ["UI/UX", "Web", "Deployment"], image: null, video: null, liveUrl: null, sourceUrl: null, caseUrl: null },
+    { title: "3M Consulting: official website", description: "Designed and built end to end, from UI/UX through deployment. Live: explore it right here.", tags: ["UI/UX", "Web", "Deployment"], image: null, video: null, liveUrl: "https://www.3m-consultingcompany.com/", sourceUrl: null, caseUrl: "/work/3m-consulting" },
     { title: "Targeted lead collection", description: "A web-scraping app collecting targeted email and WhatsApp leads.", tags: ["Automation", "Web scraping", "Python"], image: null, video: null, liveUrl: null, sourceUrl: null, caseUrl: null },
     { title: "WhatsApp outreach system", description: "An auto-messaging system built for outreach at scale.", tags: ["Automation", "WhatsApp", "Business"], image: null, video: null, liveUrl: null, sourceUrl: null, caseUrl: null },
-    { title: "3M Consulting: company website and internal admin platform", description: "Designed and built end to end as CTO, from the company website to the internal administration platform.", tags: ["Next.js", "Dashboard", "Internal tools", "UI/UX"], image: null, video: null, liveUrl: "https://www.3m-consultingcompany.com/", sourceUrl: null, caseUrl: "/work/3m-consulting" },
+    { title: "3M Consulting: internal CRM & admin platform", description: "Internal platform the team uses daily: client registrations, accounts, cash register, staff attendance, applications and calendars.", tags: ["CRM", "Dashboard", "Internal tools"], image: null, video: null, liveUrl: null, sourceUrl: null, caseUrl: "/work/3m-consulting" },
   ],
-  projectTitlesFr: ["Site officiel de l'entreprise", "Collecte de prospects ciblés", "Système de prospection WhatsApp", "3M Consulting : site et plateforme d'administration interne"],
-  projectDescriptionsFr: ["Conçu et développé de bout en bout, de l'UI/UX au déploiement.", "Une application de scraping qui collecte des prospects e-mail et WhatsApp ciblés.", "Un système d'envoi automatique pour la prospection à grande échelle.", "Conçu et développé de bout en bout en tant que CTO, du site de l'entreprise à la plateforme d'administration interne."],
-  projectTagsFr: [["UI/UX", "Web", "Déploiement"], ["Automatisation", "Scraping web", "Python"], ["Automatisation", "WhatsApp", "Business"], ["Next.js", "Dashboard", "Outils internes", "UI/UX"]],
+  projectTitlesFr: ["3M Consulting : site officiel", "Collecte de prospects ciblés", "Système de prospection WhatsApp", "3M Consulting : plateforme CRM et administration interne"],
+  projectDescriptionsFr: ["Conçu et développé de bout en bout, de l'UI/UX au déploiement. En direct : explorez-le ici.", "Une application de scraping qui collecte des prospects e-mail et WhatsApp ciblés.", "Un système d'envoi automatique pour la prospection à grande échelle.", "Plateforme interne utilisée au quotidien : inscriptions clients, comptes, caisse, présences, candidatures et calendriers."],
+  projectTagsFr: [["UI/UX", "Web", "Déploiement"], ["Automatisation", "Scraping web", "Python"], ["Automatisation", "WhatsApp", "Business"], ["CRM", "Dashboard", "Outils internes"]],
   agriScreens: [
     { image: "/images/work/agrinova-add-farm.png", step: "01", en: { title: "Add farm", copy: "Pin the farm on a map and set its size." }, fr: { title: "Ajouter une ferme", copy: "Positionner la ferme sur la carte et définir sa superficie." } },
     { image: "/images/work/agrinova-configure-sensor.png", step: "02", en: { title: "Pair a sensor", copy: "The ESP32 node joins the farm Wi-Fi from its setup portal." }, fr: { title: "Associer un capteur", copy: "Le nœud ESP32 rejoint le Wi-Fi de la ferme depuis son portail de configuration." } },
@@ -83,6 +83,10 @@ export const profile = {
   liveFrameUI: {
     en: { explore: "Click to explore the live site", reload: "Reload", open: "Open ↗", unavailable: "Live preview unavailable. Visit the website ↗", desktop: "desktop", tablet: "tablet", mobile: "mobile", label: "3M Consulting live website" },
     fr: { explore: "Cliquer pour explorer le site", reload: "Recharger", open: "Ouvrir ↗", unavailable: "Aperçu indisponible. Visiter le site ↗", desktop: "bureau", tablet: "tablette", mobile: "mobile", label: "Site 3M Consulting en direct" },
+  },
+  projectUI: {
+    en: { visit: "Visit live site ↗", internal: "Internal tool, private data", blurred: "Confidential · Client data blurred" },
+    fr: { visit: "Visiter le site ↗", internal: "Outil interne, données privées", blurred: "Confidentiel · Données client floutées" },
   },
   uiExtras: {
     en: { view: "VIEW", drag: "DRAG", chatFound: "lead found", chatSent: "message sent", chatPending: "reply pending", location: "Sousse, Tunisia" },
