@@ -1,0 +1,53 @@
+export type Locale = "en" | "fr";
+
+export const profile = {
+  name: "Mohamed Khalil Chouchen",
+  shortName: "Khalil Chouchen",
+  role: "IT Technician & Full-Stack Developer",
+  disciplines: "Web · Mobile · AI · IoT",
+  location: "Sousse, Tunisia",
+  email: "khalilchouchen112@gmail.com",
+  phone: "+216 56 747 765",
+  github: "https://github.com/khalil-chouchen",
+  linkedin: "https://www.linkedin.com/in/khalil-chouchen/",
+  cv: "/cv.pdf",
+  photo: "/pdp.jpeg",
+  heroAward: "1st place · Arab AI & IoT Challenge · GITEX Global Dubai",
+  intro: "I build connected products from the first sensor reading to the final interface, then help the team take them into the world.",
+  about: "Versatile technologist and team leader. In three years, I grew from developer to CTO to COO, moving between code, clients, recruitment, and international business without losing sight of the details.",
+  labels: {
+    en: { nav: ["About", "Skills", "Work", "Experience", "Contact"], viewCv: "View CV", contact: "Let's talk", scroll: "Explore the signal", about: "The short version", skills: "Built across the stack", featured: "Featured build", projects: "Other systems", experience: "The path so far", leadership: "Beyond the brief", contactTitle: "Have a hard problem?", contactBody: "Tell me what you are building, fixing, or trying to make real.", send: "Send message", copy: "Copy", copied: "Copied", live: "Live", source: "Source", problem: "The problem", build: "What I built", challenge: "Hardest challenge", result: "Result", architecture: "System shape", placeholder: "[ADD SCREENSHOT]" },
+    fr: { nav: ["À propos", "Compétences", "Projets", "Expérience", "Contact"], viewCv: "Voir le CV", contact: "Parlons-en", scroll: "Explorer le signal", about: "En bref", skills: "Du capteur au produit", featured: "Projet phare", projects: "Autres systèmes", experience: "Le parcours", leadership: "Au-delà du brief", contactTitle: "Un problème complexe ?", contactBody: "Parlez-moi de ce que vous construisez, corrigez ou rendez réel.", send: "Envoyer", copy: "Copier", copied: "Copié", live: "Site", source: "Code", problem: "Le problème", build: "La construction", challenge: "Le défi", result: "Le résultat", architecture: "Architecture", placeholder: "[AJOUTER UNE CAPTURE]" },
+  },
+  skills: ["JavaScript / TypeScript", "Python", "React / Next.js", "React Native", "Node.js / REST APIs", "MongoDB / Firebase", "LLM integration", "Computer vision / OCR", "TCP/IP · DNS · DHCP", "VPN · Wi-Fi · Firewalls", "Windows / macOS / Linux", "Active Directory / Microsoft 365", "ESP32 / Arduino", "Sensor systems", "Git / UI/UX / Figma"],
+  featuredProject: {
+    title: "AgriNova",
+    kicker: "Intelligent agriculture system · InnoVibe",
+    summary: "A connected agriculture system that lets farmers read the field, understand the crop, and act from one mobile interface.",
+    problem: "Farm telemetry and field decisions needed to meet in one place, with crop health visible without turning the farmer into a data analyst.",
+    build: "A React Native app with an AI vision studio for real-time crop-disease detection, a farm sensor network for telemetry, and remote valve control from the mobile interface.",
+    challenge: "Bridging live physical signals, mobile controls, and computer vision into one experience that remains useful in the field.",
+    result: "A complete IoT and mobile prototype for intelligent agriculture.",
+    stack: ["React Native", "IoT telemetry", "Computer vision", "Remote control"],
+  },
+  projects: [
+    { title: "Company official website", description: "Designed and built end to end, from UI/UX through deployment.", tags: ["UI/UX", "Web", "Deployment"] },
+    { title: "Targeted lead collection", description: "A web-scraping app collecting targeted email and WhatsApp leads.", tags: ["Automation", "Web scraping", "Python"] },
+    { title: "WhatsApp outreach system", description: "An auto-messaging system built for outreach at scale.", tags: ["Automation", "WhatsApp", "Business"] },
+  ],
+  experience: [
+    { date: "June 2026 — Present", role: "Chief Operating Officer", company: "3M Consulting", detail: "Company representation, direct client relations, after-sales support, recruitment, team management, partnerships, and international business development." },
+    { date: "June 2025 — June 2026", role: "Chief Technology Officer", company: "3M Consulting", detail: "Built the official website and two internal automation tools; technical reference across two business units." },
+    { date: "September 2024 — June 2025", role: "Computer Science Instructor", company: "Private School · Monastir", detail: "Taught algorithms, logic, ICT, and core sciences from 1ère to Baccalaureate level." },
+    { date: "September 2023 — Present", role: "Freelance Developer & Designer", company: "Self-employed", detail: "Delivered web, mobile, AI, UI/UX, and graphic design projects from concept to deployment." },
+    { date: "January 2026 — June 2026", role: "IoT & Mobile Development Intern", company: "InnoVibe · Sousse, Msaken", detail: "Built AgriNova, its mobile control surface, AI vision studio, sensor network, and remote valve control." },
+    { date: "June 2025 — August 2025", role: "Frontend Developer Intern", company: "TYM Solutions · Cyberparc La Manouba", detail: "Designed and implemented responsive pages for the official website, focused on performance and cross-device compatibility." },
+  ],
+  education: [
+    { date: "2023 — 2026", title: "Licence en Ingénierie des Systèmes Informatiques", detail: "ISITCOM, Sousse · Systèmes Embarqués et Internet des Objets" },
+    { date: "2019 — 2023", title: "Baccalaureate · Computer Science", detail: "Lycée Ibn Rachik, Kairouan" },
+  ],
+  awards: ["1st Place · Arab AI & IoT Challenge · GITEX Global Dubai", "1st Place · B-Tech Competition", "Winner · Nuit de l'Info & IEEE hackathons", "Cybersecurity CTF competitor"],
+  leadership: ["Community Manager, Trainer & Supervisor · ATAST Club · ISITCOM", "Project Manager · 3Zero ISITCOM Club"],
+  languages: ["Arabic · Native", "English · Fluent", "French · Fluent"],
+};
