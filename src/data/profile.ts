@@ -42,12 +42,31 @@ export const profile = {
     stack: ["React Native", "IoT telemetry", "Computer vision", "Remote control"],
   },
   projects: [
-    { title: "Company official website", description: "Designed and built end to end, from UI/UX through deployment.", tags: ["UI/UX", "Web", "Deployment"], image: null, video: null, liveUrl: null, sourceUrl: null },
-    { title: "Targeted lead collection", description: "A web-scraping app collecting targeted email and WhatsApp leads.", tags: ["Automation", "Web scraping", "Python"], image: null, video: null, liveUrl: null, sourceUrl: null },
-    { title: "WhatsApp outreach system", description: "An auto-messaging system built for outreach at scale.", tags: ["Automation", "WhatsApp", "Business"], image: null, video: null, liveUrl: null, sourceUrl: null },
+    { title: "Company official website", description: "Designed and built end to end, from UI/UX through deployment.", tags: ["UI/UX", "Web", "Deployment"], image: null, video: null, liveUrl: null, sourceUrl: null, caseUrl: null },
+    { title: "Targeted lead collection", description: "A web-scraping app collecting targeted email and WhatsApp leads.", tags: ["Automation", "Web scraping", "Python"], image: null, video: null, liveUrl: null, sourceUrl: null, caseUrl: null },
+    { title: "WhatsApp outreach system", description: "An auto-messaging system built for outreach at scale.", tags: ["Automation", "WhatsApp", "Business"], image: null, video: null, liveUrl: null, sourceUrl: null, caseUrl: null },
+    { title: "3M Consulting: company website and internal admin platform", description: "Designed and built end to end as CTO, from the company website to the internal administration platform.", tags: ["Next.js", "Dashboard", "Internal tools", "UI/UX"], image: null, video: null, liveUrl: "https://www.3m-consultingcompany.com/", sourceUrl: null, caseUrl: "/work/3m-consulting" },
   ],
-  projectTitlesFr: ["Site officiel de l'entreprise", "Collecte de prospects ciblés", "Système de prospection WhatsApp"],
-  projectTagsFr: [["UI/UX", "Web", "Déploiement"], ["Automatisation", "Scraping web", "Python"], ["Automatisation", "WhatsApp", "Business"]],
+  projectTitlesFr: ["Site officiel de l'entreprise", "Collecte de prospects ciblés", "Système de prospection WhatsApp", "3M Consulting : site et plateforme d'administration interne"],
+  projectDescriptionsFr: ["Conçu et développé de bout en bout, de l'UI/UX au déploiement.", "Une application de scraping qui collecte des prospects e-mail et WhatsApp ciblés.", "Un système d'envoi automatique pour la prospection à grande échelle.", "Conçu et développé de bout en bout en tant que CTO, du site de l'entreprise à la plateforme d'administration interne."],
+  projectTagsFr: [["UI/UX", "Web", "Déploiement"], ["Automatisation", "Scraping web", "Python"], ["Automatisation", "WhatsApp", "Business"], ["Next.js", "Dashboard", "Outils internes", "UI/UX"]],
+  agriScreens: [
+    { image: "/images/work/agrinova-add-farm.png", step: "01", en: { title: "Add farm", copy: "Pin the farm on a map and set its size." }, fr: { title: "Ajouter une ferme", copy: "Positionner la ferme sur la carte et définir sa superficie." } },
+    { image: "/images/work/agrinova-configure-sensor.png", step: "02", en: { title: "Pair a sensor", copy: "The ESP32 node joins the farm Wi-Fi from its setup portal." }, fr: { title: "Associer un capteur", copy: "Le nœud ESP32 rejoint le Wi-Fi de la ferme depuis son portail de configuration." } },
+    { image: "/images/work/agrinova-configure-valve.png", step: "03", en: { title: "Pair a valve", copy: "The same flow configures smart valves and their initial state." }, fr: { title: "Associer une vanne", copy: "Le même parcours configure les vannes intelligentes et leur état initial." } },
+    { image: "/images/work/agrinova-automation-rules.png", step: "04", en: { title: "Automate", copy: "IF/THEN rules open valves when moisture drops or heat rises." }, fr: { title: "Automatiser", copy: "Des règles SI/ALORS ouvrent les vannes quand l'humidité baisse ou la chaleur monte." } },
+    { image: "/images/work/agrinova-alerts.png", step: "05", en: { title: "Alerts", copy: "Critical, warning and info alerts from every node." }, fr: { title: "Alertes", copy: "Des alertes critiques, avertissements et informations pour chaque nœud." } },
+    { image: "/images/work/agrinova-ai-studio.png", step: "06", en: { title: "AI Studio", copy: "Novi, a farm-aware assistant that knows the live sensor context." }, fr: { title: "AI Studio", copy: "Novi, un assistant qui connaît la ferme et son contexte de capteurs en direct." } },
+  ],
+  threeMScreens: ["/images/work/3m-admin-inscrits.png", "/images/work/3m-admin-caisse.png"],
+  threeMFeatures: {
+    en: ["Client registrations with search, year, month and country filters, plus export", "Account creation for clients", "Cash register with monthly entries, expenses and balance", "Staff, attendance tracking, applications, reviews and calendars modules", "French interface"],
+    fr: ["Inscriptions clients avec recherche, filtres par année, mois et pays, et export", "Création de comptes clients", "Caisse avec entrées mensuelles, dépenses et solde", "Modules équipe, suivi des présences, candidatures, avis et calendriers", "Interface française"],
+  },
+  threeMPage: {
+    en: { title: "3M Consulting", accent: "website + admin platform", role: "CTO · Designed and built end to end", intro: "A public company website and a private operations layer for registrations, finance, staff and calendars.", confidential: "Confidential · Internal tool", note: "Client data blurred for privacy.", live: "Visit live website", featuresTitle: "Visible modules", back: "Back to selected work", browserUrl: "admin · private", altOne: "3M Consulting admin registrations screen", altTwo: "3M Consulting admin cash register screen" },
+    fr: { title: "3M Consulting", accent: "site + plateforme d'administration", role: "CTO · Conçu et développé de bout en bout", intro: "Un site public et une couche opérationnelle privée pour les inscriptions, la finance, l'équipe et les calendriers.", confidential: "Confidentiel · Outil interne", note: "Données client floutées pour préserver la confidentialité.", live: "Visiter le site", featuresTitle: "Modules visibles", back: "Retour aux projets", browserUrl: "admin · privé", altOne: "Écran des inscriptions de l'administration 3M Consulting", altTwo: "Écran de caisse de l'administration 3M Consulting" },
+  },
   caseSummaryFr: "Un système agricole connecté qui permet aux agriculteurs de lire le terrain, comprendre la culture et agir depuis une seule interface mobile.",
   selectedWork: {
     en: { title: "Selected", accent: "work.", intro: "Systems designed end to end, from a physical signal to a useful interface." },
@@ -56,6 +75,10 @@ export const profile = {
   caseLabels: {
     en: { app: "AGRI / NOVA", soil: "soil / 68%", valve: "valve / open" },
     fr: { app: "AGRI / NOVA", soil: "sol / 68%", valve: "vanne / ouverte" },
+  },
+  agriUI: {
+    en: { confidential: "Confidential · Under NDA", note: "Data blurred. Full walkthrough available on request during an interview.", details: "Details under NDA", scroll: "Drag to explore" },
+    fr: { confidential: "Confidentiel · Sous NDA", note: "Données floutées. Présentation complète disponible sur demande pendant un entretien.", details: "Détails sous NDA", scroll: "Faire défiler" },
   },
   uiExtras: {
     en: { view: "VIEW", drag: "DRAG", chatFound: "lead found", chatSent: "message sent", chatPending: "reply pending", location: "Sousse, Tunisia" },
