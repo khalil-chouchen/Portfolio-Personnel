@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowDown, ArrowUpRight, Check, Copy, Download, Github, Linkedin, Mail, Menu, Moon, Send, Sun, X } from "lucide-react";
 import { profile, type Locale } from "@/data/profile";
+import "./cinema.css";
 
 function MKCLogo({ animated = false }: { animated?: boolean }) {
   return <svg className={`mkc-logo ${animated ? "mkc-logo-animated" : ""}`} viewBox="0 0 120 132" role="img" aria-label="MKC logo">
@@ -8,6 +9,10 @@ function MKCLogo({ animated = false }: { animated?: boolean }) {
     <path className="logo-trace" d="M27 97V43l17 28 17-28v54M61 70l25-27M61 70l25 27M103 47c-7-6-18-1-18 23s11 29 18 23" />
     <circle className="logo-node" cx="103" cy="93" r="3" />
   </svg>;
+}
+
+function MKCWordmark() {
+  return <span className="mkc-wordmark">MKC<span>•</span></span>;
 }
 
 function ArchImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
@@ -53,21 +58,42 @@ function HeroScene({ onPhotoClick }: { onPhotoClick: () => void }) {
   </div>;
 }
 
+function CinemaHero({ onPhotoClick }: { onPhotoClick: () => void }) {
+  const disciplines = ["Web", "Mobile", "AI", "IoT"];
+  const [activeDiscipline, setActiveDiscipline] = useState(0);
+  const [introProgress, setIntroProgress] = useState(0);
+  const [introVisible, setIntroVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => setActiveDiscipline((value) => (value + 1) % disciplines.length), 2000);
+    const progress = window.setInterval(() => setIntroProgress((value) => Math.min(value + 10, 100)), 100);
+    const finish = window.setTimeout(() => setIntroVisible(false), 1100);
+    return () => { window.clearInterval(interval); window.clearInterval(progress); window.clearTimeout(finish); };
+  }, [disciplines.length]);
+
+  return <section className="cinema-hero" aria-labelledby="cinema-title">
+    {introVisible && <div className="cinema-intro" aria-hidden="true"><span>{introProgress}</span><button onClick={() => setIntroVisible(false)}>Skip</button></div>}
+    <div className="cinema-glow" /><div className="cinema-vignette" />
+    <div className="cinema-name cinema-name-back" aria-hidden="true"><span>MOHAMED KHALIL</span><span>CHOUCHEN</span></div>
+    <div className="cinema-photo"><img src={profile.images.hero} alt="Mohamed Khalil Chouchen in a navy suit" onClick={onPhotoClick} /><div className="ground-reflection" /></div>
+    <div className="cinema-name cinema-name-front" aria-hidden="true"><span>MOHAMED KHALIL</span><span>CHOUCHEN</span></div>
+    <div className="cinema-content"><p className="cinema-kicker">{profile.location} <i /> Independent technologist</p><h1 id="cinema-title">{profile.name}</h1><p className="cinema-role">{profile.role}<br /><span className="discipline-slide" key={disciplines[activeDiscipline]}>{disciplines[activeDiscipline]}</span><b> · </b><span>Web · Mobile · AI · IoT</span></p><div className="cinema-actions"><a href={profile.cv} download className="cinema-button cinema-button-accent"><Download size={15} /> {profile.labels.en.viewCv}</a><a href="#work" className="cinema-button cinema-button-outline">See my work <ArrowDown size={15} /></a></div></div>
+    <div className="cinema-award"><span>01</span><b>1st Place</b><small>Arab AI & IoT Challenge<br />GITEX Global Dubai</small></div><a className="cinema-scroll" href="#about">Scroll to explore <ArrowDown size={14} /></a>
+  </section>;
+}
+
 export default function Portfolio() {
   const [locale, setLocale] = useState<Locale>("en");
   const [theme, setTheme] = useState<"light" | "night">("light");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [intro, setIntro] = useState(true);
   const [note, setNote] = useState(false);
   const t = profile.labels[locale];
-  useEffect(() => { const timer = window.setTimeout(() => setIntro(false), 1000); return () => window.clearTimeout(timer); }, []);
   useEffect(() => { document.documentElement.dataset.theme = theme; }, [theme]);
   const nav = ["about", "skills", "work", "experience", "contact"];
   return <div className="stone-site">
-    <div className={`intro ${intro ? "intro-active" : ""}`} aria-hidden={!intro}><MKCLogo animated /><span>Signal & Stone</span><button onClick={() => setIntro(false)}>Skip</button></div><NodeCursor />
-    <header className="stone-header"><a href="#top" className="logo-link"><MKCLogo /><span>MKC</span></a><nav className={menuOpen ? "nav-open" : ""}>{t.nav.map((item, index) => <a key={item} href={`#${nav[index]}`} onClick={() => setMenuOpen(false)}>{item}</a>)}</nav><div className="header-tools"><button onClick={() => setLocale(locale === "en" ? "fr" : "en")} aria-label="Switch language">{locale === "en" ? "FR" : "EN"}</button><button onClick={() => setTheme(theme === "light" ? "night" : "light")} aria-label="Toggle theme">{theme === "light" ? <Moon size={16} /> : <Sun size={16} />}</button><a href="#contact" className="header-cta">{t.contact}<ArrowUpRight size={15} /></a><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button></div></header>
+    <NodeCursor /><header className="stone-header"><a href="#top" className="logo-link"><MKCWordmark /></a><nav className={menuOpen ? "nav-open" : ""}>{t.nav.map((item, index) => <a key={item} href={`#${nav[index]}`} onClick={() => setMenuOpen(false)}>{item}</a>)}</nav><div className="header-tools"><button onClick={() => setLocale(locale === "en" ? "fr" : "en")} aria-label="Switch language">{locale === "en" ? "FR" : "EN"}</button><button onClick={() => setTheme(theme === "light" ? "night" : "light")} aria-label="Toggle theme">{theme === "light" ? <Moon size={16} /> : <Sun size={16} />}</button><a href="#contact" className="header-cta">{t.contact}<ArrowUpRight size={15} /></a><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button></div></header>
     <main id="top">
-      <section className="stone-hero"><HeroScene onPhotoClick={() => setNote(!note)} /><div className="hero-copy"><Reveal><p className="kicker">{profile.location} <span>·</span> technology with a human pulse</p></Reveal><Reveal className="delay-1"><h1>{profile.name.split(" ").slice(0, 2).join(" ")}<br /><em>{profile.name.split(" ").slice(2).join(" ")}.</em></h1></Reveal><Reveal className="delay-2"><p className="hero-title">{profile.role}<br /><span>{profile.disciplines}</span></p></Reveal><Reveal className="delay-3"><div className="hero-actions"><a href={profile.cv} download className="button button-blue"><Download size={16} /> {t.viewCv}</a><a href="#contact" className="button button-outline">{t.contact} <ArrowUpRight size={16} /></a></div></Reveal><Reveal className="delay-4"><div className="award-badge"><span>✦</span>{profile.heroAward}</div></Reveal></div>{note && <div className="speech-bubble">I like building things that make the physical world feel a little more intelligent.</div>}<a href="#about" className="hero-scroll"><ArrowDown size={16} /> {t.scroll}</a></section>
+      <CinemaHero onPhotoClick={() => setNote(!note)} />
       <section id="about" className="stone-section about-layout"><div className="section-marker">{t.about}</div><div className="about-copy"><h2>Technology,<br /><em>with warmth.</em></h2><p>{profile.about}</p><div className="fact-row"><span><b>Based in</b>{profile.location}</span><span><b>Languages</b>Arabic · English · French</span><span><b>Typing</b>82+ WPM</span></div></div><ArchImage src={profile.images.side} alt="Mohamed Khalil Chouchen looking toward the page" className="side-portrait" /></section>
       <section id="skills" className="stone-section worlds-section"><div className="section-head"><div className="section-marker">{t.skills}</div><h2>Two worlds,<br /><em>one craft.</em></h2></div><div className="worlds-grid"><div className="world-column"><div className="world-icon">⌁</div><h3>IT & Infrastructure</h3><p>Systems that keep people, devices, and data moving.</p><div className="skill-cloud">{["TCP/IP · DNS · DHCP", "VPN · Wi-Fi · Firewalls", "Windows · macOS · Linux", "Active Directory", "Microsoft 365", "ESP32 · Arduino", "Sensor systems"].map(skill => <span key={skill}>{skill}</span>)}</div></div><div className="world-bridge"><span /><div>MKC</div><span /></div><div className="world-column"><div className="world-icon">⌘</div><h3>Software & AI</h3><p>Interfaces and intelligence that turn signals into action.</p><div className="skill-cloud">{["JavaScript / TypeScript", "Python", "React / Next.js", "React Native", "Node.js / REST APIs", "LLM integration", "Computer vision / OCR", "MongoDB / Firebase"].map(skill => <span key={skill}>{skill}</span>)}</div></div></div></section>
       <section id="work" className="stone-section featured-section"><div className="section-marker">{t.featured} <span>01</span></div><div className="featured-heading"><h2>AgriNova</h2><p>{profile.featuredProject.summary}</p></div><div className="featured-art"><div className="agri-sun" /><div className="agri-field"><i /><i /><i /><i /><i /><i /></div><div className="agri-chip">IoT / AI / MOBILE</div></div><div className="case-grid">{[[t.problem, profile.featuredProject.problem], [t.build, profile.featuredProject.build], [t.challenge, profile.featuredProject.challenge], [t.result, profile.featuredProject.result]].map(([title, text]) => <div key={title}><h3>{title}</h3><p>{text}</p></div>)}</div><div className="architecture"><h3>{t.architecture}</h3><div className="architecture-flow"><div><b>FIELD</b><span>Sensor network<br />Telemetry</span></div><i>→</i><div><b>VISION</b><span>AI vision studio<br />Crop detection</span></div><i>→</i><div><b>CONTROL</b><span>React Native<br />Remote valves</span></div></div></div></section>
