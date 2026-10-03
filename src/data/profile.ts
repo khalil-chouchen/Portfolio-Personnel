@@ -80,6 +80,10 @@ export const profile = {
     en: { confidential: "Confidential · Under NDA", note: "Data blurred. Full walkthrough available on request during an interview.", details: "Details under NDA", scroll: "Drag to explore" },
     fr: { confidential: "Confidentiel · Sous NDA", note: "Données floutées. Présentation complète disponible sur demande pendant un entretien.", details: "Détails sous NDA", scroll: "Faire défiler" },
   },
+  liveFrameUI: {
+    en: { explore: "Click to explore the live site", reload: "Reload", open: "Open ↗", unavailable: "Live preview unavailable. Visit the website ↗", desktop: "desktop", tablet: "tablet", mobile: "mobile", label: "3M Consulting live website" },
+    fr: { explore: "Cliquer pour explorer le site", reload: "Recharger", open: "Ouvrir ↗", unavailable: "Aperçu indisponible. Visiter le site ↗", desktop: "bureau", tablet: "tablette", mobile: "mobile", label: "Site 3M Consulting en direct" },
+  },
   uiExtras: {
     en: { view: "VIEW", drag: "DRAG", chatFound: "lead found", chatSent: "message sent", chatPending: "reply pending", location: "Sousse, Tunisia" },
     fr: { view: "VOIR", drag: "FAIRE DÉFILER", chatFound: "prospect trouvé", chatSent: "message envoyé", chatPending: "réponse en attente", location: "Sousse, Tunisie" },
