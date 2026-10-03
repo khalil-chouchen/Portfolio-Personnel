@@ -37,8 +37,8 @@ export const About = () => {
               <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-primary" />
               <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-primary" />
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-md border border-border overflow-hidden">
-                <img
-                  src="/pdp.jpeg"
+                  <img
+                    src="/images/khalil-side.png"
                   alt="Photo of Mohamed Khalil Chouchen"
                   className="w-full h-full object-cover"
                 />

@@ -80,8 +80,8 @@ export const Hero = () => {
               <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-primary" />
               <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-primary" />
               <div className="aspect-[4/5] rounded-md overflow-hidden border border-border">
-                <img
-                  src="/pdp.jpeg"
+                  <img
+                    src="/images/khalil-hero-front.png"
                   alt="Mohamed Khalil Chouchen"
                   className="w-full h-full object-cover"
                 />

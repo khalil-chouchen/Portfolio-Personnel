@@ -11,7 +11,12 @@ export const profile = {
   github: "https://github.com/khalil-chouchen",
   linkedin: "https://www.linkedin.com/in/khalil-chouchen/",
   cv: "/cv.pdf",
-  photo: "/pdp.jpeg",
+  images: {
+    hero: "/images/khalil-hero-front.png",
+    side: "/images/khalil-side.png",
+    award: "/images/khalil-award.png",
+    speaker: "/images/khalil-speaker.png",
+  },
   heroAward: "1st place · Arab AI & IoT Challenge · GITEX Global Dubai",
   intro: "I build connected products from the first sensor reading to the final interface, then help the team take them into the world.",
   about: "Versatile technologist and team leader. In three years, I grew from developer to CTO to COO, moving between code, clients, recruitment, and international business without losing sight of the details.",
@@ -37,11 +42,11 @@ export const profile = {
   ],
   experience: [
     { date: "June 2026 — Present", role: "Chief Operating Officer", company: "3M Consulting", detail: "Company representation, direct client relations, after-sales support, recruitment, team management, partnerships, and international business development." },
+    { date: "January 2026 — June 2026", role: "IoT & Mobile Development Intern", company: "InnoVibe · Sousse, Msaken", detail: "Built AgriNova, its mobile control surface, AI vision studio, sensor network, and remote valve control." },
     { date: "June 2025 — June 2026", role: "Chief Technology Officer", company: "3M Consulting", detail: "Built the official website and two internal automation tools; technical reference across two business units." },
+    { date: "June 2025 — August 2025", role: "Frontend Developer Intern", company: "TYM Solutions · Cyberparc La Manouba", detail: "Designed and implemented responsive pages for the official website, focused on performance and cross-device compatibility." },
     { date: "September 2024 — June 2025", role: "Computer Science Instructor", company: "Private School · Monastir", detail: "Taught algorithms, logic, ICT, and core sciences from 1ère to Baccalaureate level." },
     { date: "September 2023 — Present", role: "Freelance Developer & Designer", company: "Self-employed", detail: "Delivered web, mobile, AI, UI/UX, and graphic design projects from concept to deployment." },
-    { date: "January 2026 — June 2026", role: "IoT & Mobile Development Intern", company: "InnoVibe · Sousse, Msaken", detail: "Built AgriNova, its mobile control surface, AI vision studio, sensor network, and remote valve control." },
-    { date: "June 2025 — August 2025", role: "Frontend Developer Intern", company: "TYM Solutions · Cyberparc La Manouba", detail: "Designed and implemented responsive pages for the official website, focused on performance and cross-device compatibility." },
   ],
   education: [
     { date: "2023 — 2026", title: "Licence en Ingénierie des Systèmes Informatiques", detail: "ISITCOM, Sousse · Systèmes Embarqués et Internet des Objets" },
